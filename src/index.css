@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FinMate Design System - Pakistani AI Financial Learning Companion */
+
+@layer base {
+  :root {
+    /* FinMate Brand Colors */
+    --finmate-gradient-start: 201 58% 56%; /* #669BBC sky blue */
+    --finmate-gradient-end: 38 88% 90%; /* #FDF0D5 cream white */
+    
+    /* Primary Colors */
+    --finmate-dark-blue: 200 100% 14%; /* #003049 footer/primary text */
+    --finmate-dark-red: 351 85% 42%; /* #C1111F primary buttons */
+    --finmate-card-bg: 0 0% 100%; /* #FFFFFF cards */
+    
+    /* System Colors mapped to FinMate palette */
+    --background: var(--finmate-gradient-end);
+    --foreground: var(--finmate-dark-blue);
+
+    --card: var(--finmate-card-bg);
+    --card-foreground: var(--finmate-dark-blue);
+
+    --popover: var(--finmate-card-bg);
+    --popover-foreground: var(--finmate-dark-blue);
+
+    --primary: var(--finmate-dark-red);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--finmate-gradient-start);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 201 30% 85%;
+    --muted-foreground: var(--finmate-dark-blue);
+
+    --accent: var(--finmate-gradient-start);
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 201 30% 85%;
+    --input: 0 0% 100%;
+    --ring: var(--finmate-dark-red);
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(180deg, hsl(var(--finmate-gradient-start)), hsl(var(--finmate-gradient-end)));
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Mobile-First Typography Scale */
+  h1 { @apply text-xl font-semibold tracking-tight; } /* 20px */
+  h2 { @apply text-lg font-semibold tracking-tight; } /* 18px */  
+  h3 { @apply text-base font-medium tracking-tight; } /* 16px */
+  
+  @media (min-width: 768px) {
+    h1 { @apply text-2xl; } /* 24px on larger screens */
+    h2 { @apply text-xl; } /* 20px on larger screens */
+  }
+}
+
+@layer components {
+  /* FinMate Card Styling */
+  .finmate-card {
+    @apply bg-card border-0 rounded-xl shadow-sm backdrop-blur-sm;
+    box-shadow: 0 2px 8px rgba(0, 48, 73, 0.08);
+  }
+
+  /* FinMate Gradient Text */
+  .finmate-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--finmate-gradient-start)), hsl(var(--finmate-dark-blue)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Price Animation Effects */
+  .price-up {
+    @apply text-green-600;
+    animation: priceGlowUp 0.6s ease-out;
+  }
+  
+  .price-down {
+    @apply text-red-500;
+    animation: priceGlowDown 0.6s ease-out;
+  }
+}
+
+@keyframes priceGlowUp {
+  0% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+  50% { box-shadow: 0 0 8px rgba(34, 197, 94, 0.3); }
+  100% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes priceGlowDown {
+  0% { box-shadow: 0 0 0 rgba(239, 68, 68, 0); }
+  50% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.3); }
+  100% { box-shadow: 0 0 0 rgba(239, 68, 68, 0); }
+}
