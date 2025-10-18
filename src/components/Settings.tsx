@@ -30,8 +30,8 @@ export const Settings = () => {
     // Load saved keys from localStorage (only show user's custom keys)
     const savedKeys = localStorage.getItem('finmate-api-keys');
     const DEFAULTS = {
-      groq: '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',
-      eleven: 'sk_53c4a0a03ea789c776cd51e8fe5b9c94ce397233865aa4d9',
+      groq:  import.meta.env.VITE_GROQ_API_KEY,
+      eleven: import.meta.env.VITE_ELEVEN_API_KEY,
       abdulVoice: 'N2lVS1w4EtoT3dr4eOWO',
       johnVoice: 'GBv7mTt0atIp3Br8iCZE'
     } as const;
