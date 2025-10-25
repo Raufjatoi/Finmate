@@ -124,7 +124,7 @@ export const Learn = () => {
       return;
     }
 
-    const apiKey = localStorage.getItem('groqApiKey') ||  import.meta.env.VITE_GROQ_API_KEY;
+    const apiKey = localStorage.getItem('groqApiKey') ||  import.meta.env.VITE_GROQ_API_KEY || import.meta.env.VITE_GROQ_API_KEY2;
     if (!apiKey) {
       toast.error(selectedTutor === 'abdul' ? 'API key settings mein add karen!' : 'Please add your API key in settings!');
       return;

@@ -64,7 +64,7 @@ export const AITutor = () => {
     try {
       const savedKeys = localStorage.getItem('finmate-api-keys');
       const apiKeys = savedKeys ? JSON.parse(savedKeys) : {};
-      const groqApiKey = apiKeys.groqApiKey || import.meta.env.VITE_GROQ_API_KEY;
+      const groqApiKey = apiKeys.groqApiKey || import.meta.env.VITE_GROQ_API_KEY || import.meta.env.VITE_GROQ_API_KEY2;
       
       const systemPrompt = selectedTutor === 'abdul'
         ? 'You are Abdul, a friendly Pakistani AI tutor teaching stocks and crypto. CRITICAL: ONLY speak in Roman Urdu (Urdu written using English alphabets like "ap ka kya haal ha", "main acha hun"). NEVER use Urdu script/alphabets. Be casual and conversational. Match the question style - if someone asks simply, answer simply. Keep it short (1-2 sentences max). No need for step-by-step or examples unless specifically asked.'

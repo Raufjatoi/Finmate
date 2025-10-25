@@ -162,7 +162,7 @@ export const Markets = () => {
     try {
       const savedKeys = localStorage.getItem('finmate-api-keys');
       const apiKeys = savedKeys ? JSON.parse(savedKeys) : {};
-      const groqApiKey = apiKeys.groqApiKey ||import.meta.env.VITE_GROQ_API_KEY;
+      const groqApiKey = apiKeys.groqApiKey ||import.meta.env.VITE_GROQ_API_KEY || import.meta.env.VITE_GROQ_API_KEY2;
       
       const assetContext = `Asset: ${selectedAsset.name} (${selectedAsset.symbol})
 Price: $${selectedAsset.price.toLocaleString()}
