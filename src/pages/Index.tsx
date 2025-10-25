@@ -29,9 +29,11 @@ const Index = () => {
         animate={{ opacity: 1, y: 0 }}
         className="p-4 text-center"
       >
-        <h1 className="finmate-gradient-text text-2xl font-bold mb-1">
-          FinMate
-        </h1>
+       <h1 className="text-2xl font-bold mb-1">
+  <span className="text-blue-600">Fin</span>
+  <span className="text-red-500">Mate</span>
+</h1>
+
         <p className="text-sm text-muted-foreground">
           AI Stock & Crypto Learning Companion
         </p>
@@ -51,12 +53,20 @@ const Index = () => {
         {renderActiveTab()}
       </motion.main>
 
-      {/* Footer */}
-      <footer className="p-4 text-center border-t border-border/50 bg-card/30 backdrop-blur-sm">
-        <p className="text-xs text-muted-foreground">
-          Made with 💙 for Pakistani learners • Educational purposes only
-        </p>
-      </footer>
+<footer className="py-5 px-6 border-t border-border/50 bg-card/40 backdrop-blur-md text-center">
+  <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
+    By 
+    <img
+      src="/team_logo.png"
+      alt="Team Logo"
+      className="h-6 w-auto object-contain mx-1"
+    />
+    for Pakistani learners • Educational purposes only
+  </p>
+</footer>
+
+
+
     </div>
   );
 };
